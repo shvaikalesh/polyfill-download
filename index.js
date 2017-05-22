@@ -2,6 +2,7 @@
   "use strict"
 
   if ("function" != typeof navigator.msSaveBlob) return
+  if ("download" in HTMLAnchorElement.prototype) return
 
   document.addEventListener("click", function(event) {
     var link = event.target
