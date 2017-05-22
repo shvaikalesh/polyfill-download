@@ -5,6 +5,8 @@
   if ("download" in HTMLAnchorElement.prototype) return
 
   document.addEventListener("click", function(event) {
+    if (event.defaultPrevented) return
+
     var link = event.target
     if (!link || !link.hasAttribute("download")) return
 
